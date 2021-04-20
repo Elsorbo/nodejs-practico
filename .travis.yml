@@ -1,0 +1,32 @@
+
+languaje: node_js
+
+node_js: 12
+
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+
+git:
+  depth: 2
+
+script:
+  - yarn test
+
+notifications:
+  email:
+    recipients:
+      - elsorbo1@gmail.com
+      - aron_1991@live.com.ar
+    on_success: always
+    on_failure: always
+
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  keep_history: true
+  api_key: $HEROKU_KEY
+  app: nodejs-practico
+  on:
+    repo: elsorbo/nodejs-practico
