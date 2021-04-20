@@ -29,4 +29,4 @@ deploy:
   api_key: $HEROKU_KEY
   app: nodejs-practico
   on:
-    repo: elsorbo/nodejs-practico
+    repo: Elsorbo/nodejs-practico
