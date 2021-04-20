@@ -30,3 +30,4 @@ deploy:
   app: nodejs-practico
   on:
     repo: Elsorbo/nodejs-practico
+    branch: master
