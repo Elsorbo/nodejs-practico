@@ -1,12 +1,12 @@
 
-const expressRouter = require("express").Router();
+const userRouter = require("express").Router();
 
 const response = require("../../../network/response");
 const userController = require("./index");
 
-expressRouter.get("/", getUsers);
-expressRouter.get("/:id", getUser);
-expressRouter.post("/", addUser);
+userRouter.get("/", getUsers);
+userRouter.get("/:id", getUser);
+userRouter.post("/", addUser);
 
 function getUsers(req, res) {
 
@@ -32,4 +32,4 @@ function addUser(req, res) {
     
 }
 
-module.exports = expressRouter;
+module.exports = userRouter;
