@@ -6,13 +6,13 @@ const response = require("../../../network/response");
 
 authRouter.post("/login", authUser);
 
-function authUser(req, res) {
+function authUser(req, res, next) {
 
     const body = req.body;
 
     authController.login(body.username, body.password)
         .then( token => response.success(req, res, token))
-        .catch( err => response.error(req, res, err.message, 400));
+        .catch( next );
 
 }
 
