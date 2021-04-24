@@ -2,17 +2,23 @@
   "name": "node-js-practico",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
     "start": "node api/index.js",
+    "dev": "nodemon -L api/index.js",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "nanoid": "^3.1.22",
     "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

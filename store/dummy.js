@@ -1,12 +1,18 @@
 
-const { nanoid } = require("nanoid");
-
 const db = {
     "user": [
         {id: 0, "name": "Juan", "age": 31},
         {id: 1, "name": "Juan 2", "age": 32},
-        {id: 2, "name": "Juan 3", "age": 33}
+        {id: 2, "name": "Juan 3", "age": 33},
     ]
+}
+
+async function authQuery(table, data) {
+    
+    const [key] = Object.keys(data);
+    
+    return db[table].filter( e => e[key] === data[key] )[0] || null;
+
 }
 
 async function list(table) {
@@ -23,8 +29,8 @@ async function get(table, id) {
 
 async function upsert(table, data) {
 
-    if( !data.hasOwnProperty("id") ){
-        data["id"] = nanoid(); }
+    if(!db.hasOwnProperty(table)) { 
+        db[table] = []; }
 
     db[table].push(data);
 
@@ -42,5 +48,6 @@ module.exports = {
     list,
     get,
     upsert,
-    remove
+    remove,
+    authQuery,
 }
